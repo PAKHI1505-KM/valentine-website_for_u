@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day 🖤</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<button class="music-btn" onclick="toggleMusic()">🎧</button>
+<audio id="bgm" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<img src="bouquet.gif" class="bouquet">
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Happy Valentine’s Day, <span class="name">YOUR NAME</span> 🖤</h1>
+  <p class="sub">— from <span class="name">MY NAME</span></p>
+  <p id="countdown" class="countdown"></p>
+</section>
+
+<!-- VIDEOS -->
+<section class="edits">
+  <h2>Us, In Motion</h2>
+  <video src="videos/edit1.mp4" autoplay muted loop playsinline></video>
+  <video src="videos/edit2.mp4" autoplay muted loop playsinline></video>
+  <video src="videos/edit3.mp4" autoplay muted loop playsinline></video>
+  <video src="videos/edit4.mp4" autoplay muted loop playsinline></video>
+  <video src="videos/edit5.mp4" autoplay muted loop playsinline></video>
+  <video src="videos/edit6.mp4" autoplay muted loop playsinline></video>
+  <video src="videos/edit7.mp4" autoplay muted loop playsinline></video>
+</section>
+
+<!-- PHOTO DIARY -->
+<section class="diary">
+  <h2>Soft Moments</h2>
+  <div class="manga"><img src="photos/img1.jpg"><p>You feel like home</p></div>
+  <div class="manga"><img src="photos/img2.jpg"><p>Even in silence</p></div>
+  <div class="manga"><img src="photos/img3.jpg"><p>I choose you</p></div>
+  <div class="manga"><img src="photos/img4.jpg"><p>Always closer</p></div>
+  <div class="manga"><img src="photos/img5.jpg"><p>Gentle chaos</p></div>
+  <div class="manga"><img src="photos/img6.jpg"><p>Stay</p></div>
+  <div class="manga"><img src="photos/img7.jpg"><p>Safe here</p></div>
+  <div class="manga"><img src="photos/img8.jpg"><p>Just us</p></div>
+  <div class="manga"><img src="photos/img9.jpg"><p>Forever mood</p></div>
+</section>
+
+<!-- LETTER -->
+<section class="letter">
+<h2>My Letter</h2>
+<p>
+I didn’t fall for you loudly.  
+I fell slowly, carefully… completely.
+
+Somewhere between conversations and silence,
+you became my favorite place to rest.
+I don’t promise perfection —
+I promise presence.
+
+If love is choosing the same soul
+in every version of the future,
+then it’s always been you.
+</p>
+</section>
+
+<!-- GAME -->
+<section class="game">
+<h2>Catch My Heart 🐱</h2>
+<div id="cat"></div>
+<p>Score: <span id="score">0</span></p>
+</section>
+
+<!-- FINAL QUESTION -->
+<section class="final">
+  <h2>Will you be my Valentine?</h2>
+  <div class="btn-wrap">
+    <button onclick="yes()">YES 💖</button>
+    <button id="noBtn">NO 😭</button>
+  </div>
+  <p id="answer"></p>
+  <p id="secret" style="display:none;">
+    I love you. Quietly. Deeply. Always. 🖤
+  </p>
+</section>
+
+<!-- LOVE SCREEN -->
+<section class="love" id="loveScreen">
+  <h1>I Love You</h1>
+  <p>More than words. More than moments.</p>
+</section>
+
+<script src="game.js"></script>
+<script src="heart.js"></script>
+
+<script>
+let playing=false;
+function toggleMusic(){
+  const bgm=document.getElementById("bgm");
+  playing?bgm.pause():bgm.play();
+  playing=!playing;
+}
+
+function yes(){
+  document.getElementById("answer").innerText="You already had my heart 🖤";
+  document.getElementById("secret").style.display="block";
+  setTimeout(()=>{
+    document.getElementById("loveScreen").scrollIntoView({behavior:"smooth"});
+  },1500);
+}
+
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+  noBtn.style.position="absolute";
+  noBtn.style.left=Math.random()*70+"vw";
+  noBtn.style.top=Math.random()*70+"vh";
+});
+
+const target=new Date("Feb 14, 2026 00:00:00").getTime();
+setInterval(()=>{
+  const now=new Date().getTime();
+  const d=target-now;
+  document.getElementById("countdown").innerText=
+  Math.floor(d/(1000*60*60*24))+" days until Valentine’s Day";
+},1000);
+</script>
+
+</body>
+</html>
