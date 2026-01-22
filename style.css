@@ -1,0 +1,99 @@
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#0b0b0f;
+color:#eee;
+text-align:center;
+overflow-x:hidden;
+}
+
+section{padding:60px 20px;}
+
+h1,h2{
+font-family:'Playfair Display',serif;
+color:#ff4d88;
+}
+
+.name{color:#ff4d88;}
+.sub,.countdown{color:#aaa;letter-spacing:2px;}
+
+.hero{height:90vh;display:flex;flex-direction:column;justify-content:center;}
+
+video{
+width:90%;
+max-width:320px;
+border-radius:20px;
+margin:15px auto;
+box-shadow:0 0 30px rgba(255,77,136,0.4);
+}
+
+.manga{
+background:#111;
+padding:15px;
+border-radius:20px;
+margin:20px auto;
+max-width:340px;
+animation:fade 1.2s ease;
+}
+
+.manga img{width:100%;border-radius:15px;}
+.manga p{color:#ff7aa2;}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;}
+}
+
+.letter{
+background:#111;
+border-radius:25px;
+margin:20px;
+}
+
+.bouquet{
+position:fixed;
+bottom:15px;
+right:10px;
+width:100px;
+animation:float 3s infinite;
+}
+
+@keyframes float{50%{transform:translateY(-15px);}}
+
+.music-btn{
+position:fixed;
+top:10px;
+right:10px;
+background:#ff4d88;
+border:none;
+padding:10px;
+border-radius:50%;
+color:white;
+}
+
+#cat{
+width:80px;
+height:80px;
+background:url('cat.png') center/cover;
+margin:auto;
+cursor:pointer;
+}
+
+.final button{
+margin:10px;
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:#ff4d88;
+color:white;
+font-size:16px;
+}
+
+.love{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle,#1a1a24,#000);
+}
